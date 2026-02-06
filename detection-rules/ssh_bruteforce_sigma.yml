@@ -1,0 +1,13 @@
+title: SSH Brute Force Attempt
+id: 11111111-2222-3333-4444-555555555555
+status: experimental
+description: Detects multiple failed SSH login attempts from a single IP
+author: Amit Maurya
+logsource:
+  product: linux
+  service: ssh
+detection:
+  selection:
+    message|contains: "Failed password"
+  condition: selection
+level: high
